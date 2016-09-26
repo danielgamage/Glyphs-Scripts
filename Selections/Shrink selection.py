@@ -2,7 +2,7 @@
 nodesToDeselect = []
 for path in Layer.paths:
     for node in path.nodes:
-        if node.selected = True:
+        if node.selected:
             if (node.nextNode.selected ^ node.prevNode.selected):
 				print node
 				nodesToDeselect.append(node)
