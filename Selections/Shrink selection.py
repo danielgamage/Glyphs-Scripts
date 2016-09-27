@@ -6,8 +6,8 @@ for path in Layer.paths:
     for node in path.nodes:
         if node.selected:
             if not node.nextNode.selected or not node.prevNode.selected:
-				nodesToDeselect.append(node)
+                nodesToDeselect.append(node)
 
 # Deselect them
 for node in nodesToDeselect:
-	node.selected = False
+    node.selected = False
