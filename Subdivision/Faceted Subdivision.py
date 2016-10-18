@@ -1,7 +1,10 @@
-#MenuTitle: Subdivide (Faceted)
-for path in Layer.paths:
-    # store static node count
-    nodeCount = len(path.nodes)
+#MenuTitle: Subdivide Selection (Add Midpoint)
+# -*- coding: utf-8 -*-
+__doc__ = """
+Adds a midpoint between selected nodes.
+"""
 
-    for x in range(1, len(path.nodes) - 1):
-        path.insertNodeWithPathTime_(nodeCount - x + 0.5)
+for node in Layer.selection:
+    if (node.nextNode.selected):
+        nodeIndex = path.indexOfNode_(node)
+        path.insertNodeWithPathTime_(nodeIndex + 1.5)

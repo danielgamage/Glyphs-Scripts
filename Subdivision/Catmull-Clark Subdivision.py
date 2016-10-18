@@ -1,4 +1,9 @@
 #MenuTitle: Subdivide Lines (Catmull-Clark)
+# -*- coding: utf-8 -*-
+__doc__ = """
+Subdivides entire paths using Catmull-Clark smoothing subdivision.
+"""
+
 import Cocoa
 
 for path in Layer.paths:
