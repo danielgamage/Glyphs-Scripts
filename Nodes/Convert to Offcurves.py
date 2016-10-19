@@ -1,4 +1,4 @@
-#MenuTitle: Convert selected nodes to offcurves
+#MenuTitle: Convert Selected Nodes to Offcurves
 # -*- coding: utf-8 -*-
 __doc__ = """
 This is a rather dangerous operation.

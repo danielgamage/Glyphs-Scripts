@@ -1,5 +1,23 @@
 # Glyphs-Scripts
 
+## Nodes
+
+### Convert Selected Nodes to Offcurves
+Converts selected nodes of any type to `offcurve` (handles). If you select two nodes, they'll be converted and the following node will become a curve.
+
+If you execute this on an entire path, you'll get some TrueType curves (**experimental**).
+
+### Split Selected Nodes
+Duplicates selected node(s) and separates them away from origin at a 0° or 90° angle. Great for quickly setting up ink traps.
+
+## Subdivision
+
+### Subdivide Lines (Catmull-Clark)
+Subdivides path using Catmull-Clark algorithm. With more subdivision, paths will smooth out, but node count will get unwieldy.
+
+### Subdivide Selection (Add Midpoint)
+Adds midpoints to all selected path segments. For line segments, this is akin to faceted subdivision.
+
 ## Selection
 
 ### Continue Selection

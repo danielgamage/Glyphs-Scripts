@@ -1,4 +1,4 @@
-#MenuTitle: Split selected nodes
+#MenuTitle: Split Selected Nodes
 # -*- coding: utf-8 -*-
 __doc__ = """
 Splits nodes into two and separates them by 2 units at 90°-snapped angle
