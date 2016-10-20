@@ -12,6 +12,11 @@ Duplicates selected node(s) and separates them away from origin at a 0° or 90°
 
 ## Subdivision
 
+### Subdivide Lines to Curves (Catmull-Clark)
+Similar to b-spline cages (like very similar), you can draw out line nodes and run this script to convert them to smooth cubic bézier curves. The result after one execution should be identical in shape to the Subdivide Lines (Catmull-Clark) script after three executions, but this will use far fewer nodes.
+
+![](https://pbs.twimg.com/media/CvM1vXrWgAETVor.jpg)
+
 ### Subdivide Lines (Catmull-Clark)
 Subdivides path using Catmull-Clark algorithm. With more subdivision, paths will smooth out, but node count will get unwieldy.
 
