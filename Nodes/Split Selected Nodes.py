@@ -1,7 +1,8 @@
 #MenuTitle: Split Selected Nodes
 # -*- coding: utf-8 -*-
 __doc__ = """
-Splits nodes into two and separates them by 2 units at 90°-snapped angle
+Splits nodes into two and separates them by 2 units at 90°-snapped angle.
+Great for making inktraps fast.
 """
 
 import Cocoa
@@ -25,6 +26,10 @@ for node in Layer.selection:
 
     path.insertNode_atIndex_(cloneNode, node.index)
 
-    # set positions
+    # make joining path segment a line
+    if node.type == "curve":
+        node.type = "line"
+
+    # separate nodes from origin
     node.setPosition_(originPosition)
     cloneNode.setPosition_(clonePosition)
