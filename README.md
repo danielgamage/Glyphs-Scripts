@@ -1,9 +1,12 @@
-# Glyphs-Scripts
+This document is separated by group. Within each folder you'll find scripts for different occasions.
 
 ## Nodes
 
+### Convert Selected Nodes to Lines
+Converts selected nodes to `line` (handles). Make sure you know how path segments are calculated in Glyphs.
+
 ### Convert Selected Nodes to Offcurves
-Converts selected nodes of any type to `offcurve` (handles). If you select two nodes, they'll be converted and the following node will become a curve.
+Converts selected nodes to `offcurve` (handles). If you select two nodes, they'll be converted and the following node will become a curve.
 
 If you execute this on an entire path, you'll get some TrueType curves (**experimental**).
 
