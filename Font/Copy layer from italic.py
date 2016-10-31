@@ -11,29 +11,29 @@ Mostly from @mekkablue
 # https://github.com/mekkablue/Glyphs-Scripts/blob/master/Masters/Copy%20Layer%20to%20Layer.py
 
 def masterHasItalicAngle(thisMaster):
-    try:
-        if thisMaster.italicAngle == 0.0:
-            return False
-        else:
-            return True
-    except Exception as e:
-        print( "masterHasItalicAngle: %s" % str(e) )
+	try:
+		if thisMaster.italicAngle == 0.0:
+			return False
+		else:
+			return True
+	except Exception as e:
+		print( "masterHasItalicAngle: %s" % str(e) )
 
 def italicFontForFont(thisFont):
-    try:
-        if thisFont:
-            familyName = thisFont.familyName
-            listOfPossibleFamilyMembers = [ f for f in Glyphs.fonts if f.familyName == familyName and f != thisFont ]
-            if len(listOfPossibleFamilyMembers) == 1:
-                return listOfPossibleFamilyMembers[0]
-            else:
-                thisFontIsItalic = masterHasItalicAngle(thisFont.masters[0])
-                listOfItalicFamilyMembers = [f for f in listOfPossibleFamilyMembers if masterHasItalicAngle(f.masters[0]) is not thisFontIsItalic]
-                if len(listOfItalicFamilyMembers) == 1:
-                    return listOfItalicFamilyMembers[0]
-        return None
-    except Exception as e:
-        print( "italicFontForFont: %s" % str(e) )
+	try:
+		if thisFont:
+			familyName = thisFont.familyName
+			listOfPossibleFamilyMembers = [ f for f in Glyphs.fonts if f.familyName == familyName and f != thisFont ]
+			if len(listOfPossibleFamilyMembers) == 1:
+				return listOfPossibleFamilyMembers[0]
+			else:
+				thisFontIsItalic = masterHasItalicAngle(thisFont.masters[0])
+				listOfItalicFamilyMembers = [f for f in listOfPossibleFamilyMembers if masterHasItalicAngle(f.masters[0]) is not thisFontIsItalic]
+				if len(listOfItalicFamilyMembers) == 1:
+					return listOfItalicFamilyMembers[0]
+		return None
+	except Exception as e:
+		print( "italicFontForFont: %s" % str(e) )
 
 def copyPathsFromLayerToLayer( sourceLayer, targetLayer ):
 	"""Copies all paths from sourceLayer to targetLayer"""
@@ -92,19 +92,19 @@ def copyMetricsFromLayerToLayer( sourceLayer, targetLayer ):
 		print "- Width not changed (already was %.1f)" % sourceWidth
 
 italicFont = italicFontForFont(Layer.parent.parent)
-glyph = Layer.parent
-glyphName = glyph.name
+for glyph in [ x.parent for x in Font.selectedLayers ]:
+	glyphName = glyph.name
 
-uprightMasterID = Layer.associatedMasterId
-uprightMasterName = italicFont.masters[uprightMasterID].name.replace("Italic","").strip()
+	uprightMasterID = Layer.associatedMasterId
+	uprightMasterName = italicFont.masters[uprightMasterID].name.replace("Italic","").strip()
 
-italicGlyph = italicFont.glyphs[glyphName]
-italicMasters = [m for m in italicFont.masters if m.name.startswith(uprightMasterName)]
+	italicGlyph = italicFont.glyphs[glyphName]
+	italicMasters = [m for m in italicFont.masters if m.name.startswith(uprightMasterName)]
 
-targetlayer = glyph.layers[uprightMasterID]
-sourcelayer = italicGlyph.layers[uprightMasterID]
+	targetlayer = glyph.layers[uprightMasterID]
+	sourcelayer = italicGlyph.layers[uprightMasterID]
 
-copyPathsFromLayerToLayer( sourcelayer, targetlayer )
-copyComponentsFromLayerToLayer( sourcelayer, targetlayer )
-copyAnchorsFromLayerToLayer( sourcelayer, targetlayer )
-copyMetricsFromLayerToLayer( sourcelayer, targetlayer )
+	copyPathsFromLayerToLayer( sourcelayer, targetlayer )
+	copyComponentsFromLayerToLayer( sourcelayer, targetlayer )
+	copyAnchorsFromLayerToLayer( sourcelayer, targetlayer )
+	copyMetricsFromLayerToLayer( sourcelayer, targetlayer )
