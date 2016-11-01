@@ -11,12 +11,12 @@ Mostly taken from mekkablue's [Copy Layer to Layer script](https://github.com/me
 ## Nodes
 
 ##### Convert Selected Nodes to Lines
-Converts selected nodes to `line` (handles). Make sure you know how path segments (especially curves) are calculated in Glyphs, as this can create some odd results.
+Converts selected nodes to `line`-type nodes. Make sure you know how path segments (especially curves) are calculated in Glyphs, as this can create some odd results.
 
 ##### Convert Selected Nodes to Offcurves
 Converts selected nodes to `offcurve` (handles). If you select two nodes, they'll be converted and the following node will become a curve.
 
-If you execute this on an entire path, you'll get some TrueType curves (**experimental**).
+If you execute this on an entire path, you'll get some quadratic curve cages (**experimental**).
 
 ##### Split Selected Nodes
 Duplicates selected node(s) and separates them away from origin at a 0° or 90° angle. Great for quickly setting up ink traps.
