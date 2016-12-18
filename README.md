@@ -8,6 +8,9 @@ You may find this helpful if your roman font has upright italics in ss01 (for sa
 ##### Copy layer from italic
 Mostly taken from mekkablue's [Copy Layer to Layer script](https://github.com/mekkablue/Glyphs-Scripts/blob/master/Masters/Copy Layer to Layer.py), this copies the entire layer of a glyph from an italic counterpart. Useful for quickly syncing changes between roman and oblique.
 
+##### Copy anchors from italic
+Same as Copy layer from italic but only copies anchors
+
 ## Nodes
 
 ##### Convert Selected Nodes to Lines
@@ -18,8 +21,13 @@ Converts selected nodes to `offcurve` (handles). If you select two nodes, they'l
 
 If you execute this on an entire path, you'll get some quadratic curve cages (**experimental**).
 
-##### Split Selected Nodes
+##### Split Selected Nodes (Make Inktraps)
 Duplicates selected node(s) and separates them away from origin at a 0° or 90° angle. Great for quickly setting up ink traps.
+
+## Paths
+
+##### Add handles to selected segments
+For all selected line segments, adds bezier handles at 1/3 and 2/3 of the segment length. Equivocal to alt-clicking on a line segment, but useful if adding handles to many different segments.
 
 ## Subdivision
 
