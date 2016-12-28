@@ -11,6 +11,14 @@ Mostly taken from mekkablue's [Copy Layer to Layer script](https://github.com/me
 ##### Copy anchors from italic
 Same as Copy layer from italic but only copies anchors
 
+## Italic
+
+##### Move Selection Down 10 Units at Italic Angle
+##### Move Selection Down 100 Units at Italic Angle
+##### Move Selection Up 10 Units at Italic Angle
+##### Move Selection Up 100 Units at Italic Angle
+Translates nodes up or down either 10 or 100 units, then shifts left or right to move at the same angle as the master's italic angle.
+
 ## Nodes
 
 ##### Convert Selected Nodes to Lines
