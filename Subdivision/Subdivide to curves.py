@@ -12,7 +12,7 @@ for path in Layer.paths:
     # store static node count
     nodeCount = len(path.nodes)
 
-    for i in xrange(nodeCount, 0, -1):
+    for i in range(nodeCount, 0, -1):
         # insert nodes backwards
         p1 = path.insertNodeWithPathTime_(i + ONE_THIRD) if i == nodeCount else path.insertNodeWithPathTime_(i + 0.5)
         p2 = path.insertNodeWithPathTime_(i - ONE_THIRD) if i > 1 else path.insertNodeWithPathTime_(i - 0.5)
@@ -25,9 +25,9 @@ for path in Layer.paths:
         node = path.nodes[i]
         node.setPosition_(midpoint)
 
-    for i in xrange(0, nodeCount):
+    for i in range(0, nodeCount):
         oncurveNode = path.nodes[i * 3].nextNode
         oncurveNode.type = "curve"
-        oncurveNode.connection = "smooth"
+        oncurveNode.smooth = True
         oncurveNode.prevNode.type = "offcurve"
         oncurveNode.nextNode.type = "offcurve"
